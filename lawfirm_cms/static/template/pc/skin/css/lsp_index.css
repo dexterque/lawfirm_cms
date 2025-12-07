@@ -1,0 +1,83 @@
+@media screen and (max-width:1079px){.indtjpro ul li{width:unset;margin-left:20px;margin-right:20px;margin-bottom:20px}
+.indtjpro ul li:nth-child(n+5){margin-bottom:20px}
+.professional p{font-size:unset}
+}@media screen and (max-width:1399px){.us p{font-size:unset}
+}@media screen and (max-width:1280px){.indtjpro ul li{margin-right:20px}
+}@media screen and (max-width:1080px){.indtjpro ul{display:unset}
+}@media screen and (max-width:1199px){.about_us p{font-size:unset}
+.about_us .w1190{display:unset;justify-content:unset}
+.about_us .us{width:90%;margin-left:auto;margin-right:auto}
+.about_us .right{width:90%;margin-top:0px;margin-left:auto;margin-right:auto}
+.right .r_top{width:50%;float:left}
+.updates{width:unset}
+.News{display:none}
+}@media (max-width:800px){.updates ul li:nth-child(2n+2){margin-right:3%}
+}@media (max-width:425px){.indtjpro ul{justify-content:center;align-items:center}
+.indtjpro ul li p{font-size:14px}
+.News_updates ul{display:unset;justify-content:unset}
+.us .left .l_top{display:unset}
+.us .left .l_bottom{display:unset}
+.us .left .l_top .service{width:unset}
+.us .left .l_top img{max-width:100%}
+.us .left .l_bottom .situation{width:unset}
+.right .r_top{display:unset;width:100%}
+.right .r_top .develop{width:50%;float:left;height:auto;padding:unset}
+.r_top img{max-width:50%;float:left}
+.right .r_bottom{display:unset}
+.r_bottom img{max-width:50%;float:left}
+.right .r_bottom .characteristic{width:50%;padding:unset;float:left}
+}.classify li .svg2{display:none}
+.classify li:hover .svg1{display:none}
+.classify li:hover .svg2{display:inline-block}
+.lvshi img:nth-child(1){display:block}
+.mobileBox{display:none}
+.jjchild{display:none}
+.zhuanye .w1400{position:relative}
+.tem_wjy{overflow:hidden}
+.tem_wjy h3{font-size:36px}
+.tem_wjy h3 span{font-size:18px;margin-left:30px}
+.tem_wjy .t_left{float:left;width:65%;padding-right:150px}
+.tem_wjy .t_left .tlmore{display:flex;justify-content:flex-end;margin-top:20px;margin-bottom:50px}
+.tem_wjy .timgbox ul{display:flex;flex-wrap:wrap}
+.tem_wjy .timgbox ul li{width:33.3%;margin-bottom:20px}
+.timgbox img{width:150px;height:150px;border-radius:100px;float:left;margin-right:20px;cursor:pointer}
+.timgbox img.active{border:solid 2px #cc1320}
+.tem_wjy .t_right{float:left;width:35%;position:absolute;right:0;bottom:0}
+.tem_wjy .t_right img{float:left}
+.timgbox .tmore{color:#333;float:right}
+.lvshi img{display:none}
+@media (max-width:1440px){.timgbox img{width:130px;height:130px;border-radius:50%}
+.tem_wjy .t_left{padding-right:100px}
+}@media (max-width:1200px){.tem_wjy .t_left p{font-size:16px}
+.timgbox img{width:110px;height:110px;border-radius:50%}
+}@media (max-width:1080px){.tem_wjy .t_left{width:65%;padding-right:50px}
+.timgbox img{width:110px;height:110px;border-radius:50%}
+}@media (max-width:1024px){.timgbox{width:60%}
+.tem_wjy .t_left{width:60%;padding-right:50px}
+.tem_wjy h3 span{display:block;margin-left:unset}
+.pcclickBox{display:none}
+.mobileBox{display:table}
+.lvshi img{width:400px !important;height:720px !important}
+}@media (max-width:996px){.lvshi img{width:350px !important;height:650px !important}
+.tem_wjy .t_left{width:55%;padding-right:0px}
+.timgbox{width:55%}
+}@media (max-width:880px){.lvshi img{width:0px !important;height:0px !important}
+.tem_wjy .t_left{width:100%;padding-right:0px}
+.timgbox{width:100%}
+.timgbox img{width:120px;height:120px}
+}@media (max-width:600px){.timgbox img{width:100px;height:100px;border-radius:50%}
+}@media (max-width:425px){.classify li:hover .svg1{display:block}
+.tem_wjy h3{font-size:32px}
+.tem_wjy h3 span{display:block;margin-left:unset;font-size:16px}
+.tem_wjy .t_left p{font-size:14px}
+.pcclickBox{display:none}
+.mobileBox{display:block}
+.indtjpro ul li img{width:60px;height:70px;display:block;margin:0 auto 20px !important}
+.tem_wjy .t_right{width:unset}
+.mobileBox{width:100%;overflow:hidden;margin-top:10px;margin-bottom:10px}
+.mobileBox.timgbox img{margin-right:10px;width:60px;height:60px}
+.t_right .tmore{display:none}
+.lvshi img{display:none !important}
+.timgbox .tmore{color:#333;float:right;font-size:14px}
+.t_left .tlmore{font-size:14px}
+}

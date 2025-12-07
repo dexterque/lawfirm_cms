@@ -1,0 +1,197 @@
+{% load static wagtailcore_tags wagtailimages_tags wagtailuserbar %}
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>{{ page.title }}_翰汇所</title>
+    <meta name="keywords" content="北京翰汇律师事务所,翰汇律师事务所" />
+    <meta name="description" content="{{ page.intro|default:page.title }}" />
+    <link href="/uploads/allimg/20240516/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="{% static 'template/pc/skin/css/style.css' %}" rel="stylesheet" media="screen" type="text/css" />
+    <link href="{% static 'template/pc/skin/css/swiper.min.css' %}" rel="stylesheet" media="screen" type="text/css" />
+    <script language="javascript" type="text/javascript"
+        src="{% static 'template/pc/skin/js/jquery-3.7.0.min.js' %}"></script>
+    <script language="javascript" type="text/javascript"
+        src="{% static 'template/pc/skin/js/swiper.min.js' %}"></script>
+</head>
+
+<body>
+    {% wagtailuserbar %}
+    <header>
+        <base target="_blank">
+        <div class="top_two" id="dao">
+            <div class="w1400">
+                <h1 class="logo">
+                    <a href="/" title="北京翰汇律师事务所">
+                        <img id="img_white" src="/uploads/allimg/20240516/1-240516163232X5.png" alt="北京翰汇律师事务所" />
+                        <img id="img_black" src=" " alt="北京翰汇律师事务所">
+                    </a>
+                </h1>
+                <nav>
+                    <div class="menu_open"> <i></i> <i></i> <i></i> </div>
+                    <div class="nav nav_class">
+                        <ul class="nav_ul" id="text">
+                            <li class="nav_item">
+                                <a href="/" id="navId1">首页</a>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/jingdiananli/" id="navId2" class="">经典案例</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">经典案例</a></li>
+                                    <li class="nav_item2"><a href="/jingdiananli/">成功案例</a></li>
+                                    <li class="nav_item2"><a href="/huozengjinqi/">获赠锦旗</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/yewulingyu/" id="navId3" class="">业务领域</a></li>
+                            <li class="nav_item" id="navF"><a href="/zhuanyetuandui/" id="navId4"
+                                    class="">专业团队</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">专业团队</a></li>
+                                    <li class="nav_item2"><a href="/zhubanlvshi/">主办律师</a></li>
+                                    <li class="nav_item2"><a href="/lvshizhurenzhuli/">律师主任助理</a></li>
+                                    <li class="nav_item2"><a href="/lvshiyewuzhuli/">律师业务助理</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/xinwendongtai/" id="navId5" class="">新闻动态</a></li>
+                            <li class="nav_item" id="navF"><a href="/zhishiketang/" id="navId6" class="">知识课堂</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">知识课堂</a></li>
+                                    <li class="nav_item2"><a href="/zhishiketang/">专业文章</a></li>
+                                    <li class="nav_item2"><a href="/pufashipin/">普法视频</a></li>
+                                    <li class="nav_item2"><a href="/weiquanshuji/">维权书籍</a></li>
+                                    <li class="nav_item2"><a href="/redianpufa/">热点普法</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/guanyuwomen/" id="navId7" class="">关于我们</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">关于我们</a></li>
+                                    <li class="nav_item2"><a href="/guanyuwomen/">律所介绍</a></li>
+                                    <li class="nav_item2"><a href="/lianxiwomen/">联系我们</a></li>
+                                    <li class="nav_item2"><a href="/jiarulvsuo/">加入律所</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hcover"></div>
+                    <style>
+                        #dao {
+                            position: fixed;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            width: 100%;
+                            height: 70px;
+                            z-index: 999;
+                            background: #fff;
+                        }
+
+                        #img_white {
+                            display: block !important;
+                        }
+
+                        #img_black {
+                            display: none !important;
+                        }
+
+                        .nav_ul li a {
+                            color: #000;
+                        }
+                    </style>
+                    <script language="javascript" type="text/javascript">
+                        try {
+                            document.getElementById("navId" + nav).className = "navon";
+                        }
+                        catch (e) { }
+                        window.onscroll = function a() {
+                            var h = document.documentElement.scrollTop || document.body.scrollTop;
+                            var headerTop = document.getElementById('dao');
+                            var Text = document.getElementById('navId1');
+                            var Text1 = document.getElementById('navId2');
+                            var Text2 = document.getElementById('navId3');
+                            var Text3 = document.getElementById('navId4');
+                            var Text4 = document.getElementById('navId5');
+                            var Text5 = document.getElementById('navId6');
+                            var Text6 = document.getElementById('navId7');
+                            var Text7 = document.getElementById('navId8');
+                            var img_white = document.getElementById('img_white')
+                            var img_black = document.getElementById('img_black')
+                            if (h > 100) {
+                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/logo-black.png " alt="_翰汇所" />');
+                                headerTop.style.background = '#fff';
+                                Text.style.color = '#000'
+                                Text1.style.color = '#000'
+                                Text2.style.color = '#000'
+                                Text3.style.color = '#000'
+                                Text4.style.color = '#000'
+                                Text5.style.color = '#000'
+                                Text6.style.color = '#000'
+                                if (Text7) Text7.style.color = '#000'
+                                img_white.style.display = 'none'
+                                img_black.style.display = 'block'
+                            } else if (h <= 100) {
+                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/logo-black.png" alt="_翰汇所" />');
+                                headerTop.style.background = '#fff';
+                                Text.style.color = '#000'
+                                Text1.style.color = '#000'
+                                Text2.style.color = '#000'
+                                Text3.style.color = '#000'
+                                Text4.style.color = '#000'
+                                Text5.style.color = '#000'
+                                Text6.style.color = '#000'
+                                if (Text7) Text7.style.color = '#000'
+                                img_white.style.display = 'block'
+                                img_black.style.display = 'none'
+                            }
+                        }
+                    </script>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- banner start -->
+    <div class="NyBanner">
+        <img src="/uploads/allimg/20240507/1-24050GG20RO.jpg" class="nyBa_Img" />
+        <div class="NyBa_Con">
+            <p>{{ page.title }}</p>
+        </div>
+    </div>
+    <!-- banner end -->
+
+    <div class="Nycase business">
+        <div class="w1200">
+            <div class="NyCrumb">
+                <div class="NyCrumb_Main">
+                    <p><img src="{% static 'template/pc/skin/images/Crumb.png' %}" class="Crumb" /> <a href='/'
+                            class=''>首页</a> &gt; <a href='{% pageurl page %}'>{{ page.title }}</a></span></p>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="NyBusiness">
+            <div class="NyBusiness_Infor w1200">
+                <div class="NyBusinessInfor_Main">
+                    <div class="NyBusinessInfor_Con">
+                        {% block page_content %}
+                        <div class="intro">
+                            <p>{{ page.intro }}</p>
+                        </div>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "includes/footer.html" %}
+
+    <script language="javascript" type="text/javascript" src="{% static 'template/pc/skin/js/customer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'template/pc/skin/js/jquery.js' %}"></script>
+</body>
+
+</html>

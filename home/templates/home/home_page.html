@@ -1,0 +1,593 @@
+{% load static wagtailcore_tags wagtailimages_tags wagtailuserbar %}
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>北京翰汇律师事务所__翰汇所</title>
+    <meta name="keywords" content="北京翰汇律师事务所,翰汇律师事务所,土地征收,拆迁,商品房,行政诉讼,法律维权,法律服务,律师咨询" />
+    <meta name="description" content="北京翰汇律师事务所是一家专注于征收、拆迁、环保、商品房的专业精品律师事务所,秉持"
+        博思笃行,行法刚正,客户至上,鼎力维权"的理念,致力于为客户提供全方位、专业化法律服务。" />
+    <link href="/uploads/allimg/20240516/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="{% static 'template/pc/skin/css/style.css' %}" rel="stylesheet" media="screen" type="text/css" />
+    <link href="{% static 'template/pc/skin/css/swiper.min.css' %}" rel="stylesheet" media="screen" type="text/css" />
+    <script language="javascript" type="text/javascript"
+        src="{% static 'template/pc/skin/js/jquery-3.7.0.min.js' %}"></script>
+    <script language="javascript" type="text/javascript"
+        src="{% static 'template/pc/skin/js/swiper.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'template/pc/skin/css/lsp_index.css' %}">
+    <style>
+        .only_mobile {
+            display: none
+        }
+
+        @media (max-width: 550px) {
+            .only_mobile {
+                display: block;
+                width: 100%
+            }
+
+            .tname h3 {
+                position: absolute;
+                bottom: 10px;
+                left: 5px;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% wagtailuserbar %}
+    <header>
+        <base target="_blank">
+        <div class="top_two" id="dao">
+            <div class="w1400">
+                <h1 class="logo">
+                    <a href="/" title="北京翰汇律师事务所">
+                        <img id="img_white" src="/uploads/allimg/20240516/1-240516163232X5.png" alt="北京翰汇律师事务所" />
+                        <img id="img_black" src=" " alt="北京翰汇律师事务所">
+                    </a>
+                </h1>
+                <nav>
+                    <div class="menu_open"> <i></i> <i></i> <i></i> </div>
+                    <div class="nav nav_class">
+                        <ul class="nav_ul" id="text">
+                            <li class="nav_item"><a href="/" id="navId1" class="navon">首页</a></li>
+                            <li class="nav_item" id="navF"><a href="/jingdiananli/" id="navId2">经典案例</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">经典案例</a></li>
+                                    <li class="nav_item2"><a href="/jingdiananli/">成功案例</a></li>
+                                    <li class="nav_item2"><a href="/huozengjinqi/">获赠锦旗</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/yewulingyu/" id="navId3">业务领域</a></li>
+                            <li class="nav_item" id="navF"><a href="/zhuanyetuandui/" id="navId4">专业团队</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">专业团队</a></li>
+                                    <li class="nav_item2"><a href="/zhubanlvshi/">主办律师</a></li>
+                                    <li class="nav_item2"><a href="/lvshizhurenzhuli/">律师主任助理</a></li>
+                                    <li class="nav_item2"><a href="/lvshiyewuzhuli/">律师业务助理</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/xinwendongtai/" id="navId5">新闻动态</a></li>
+                            <li class="nav_item" id="navF"><a href="/zhishiketang/" id="navId6">知识课堂</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">知识课堂</a></li>
+                                    <li class="nav_item2"><a href="/zhishiketang/">专业文章</a></li>
+                                    <li class="nav_item2"><a href="/pufashipin/">普法视频</a></li>
+                                    <li class="nav_item2"><a href="/weiquanshuji/">维权书籍</a></li>
+                                    <li class="nav_item2"><a href="/redianpufa/">热点普法</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/guanyuwomen/" id="navId7">关于我们</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">关于我们</a></li>
+                                    <li class="nav_item2"><a href="/guanyuwomen/">律所介绍</a></li>
+                                    <li class="nav_item2"><a href="/lianxiwomen/">联系我们</a></li>
+                                    <li class="nav_item2"><a href="/jiarulvsuo/">加入律所</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hcover"></div>
+                    <style>
+                        #dao {
+                            position: fixed;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            width: 100%;
+                            height: 70px;
+                            z-index: 999;
+                        }
+
+                        #img_white {
+                            display: block !important;
+                        }
+
+                        #img_black {
+                            display: none !important;
+                        }
+                    </style>
+                    <script language="javascript" type="text/javascript">
+                        try { document.getElementById("navId" + nav).className = "navon"; } catch (e) { }
+                        window.onscroll = function a() {
+                            var h = document.documentElement.scrollTop || document.body.scrollTop;
+                            var headerTop = document.getElementById('dao');
+                            if (h > 100) {
+                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/logo-black.png " alt="_翰汇所" />');
+                                headerTop.style.background = '#fff';
+                                $('#text li a').css('color', '#000');
+                            } else if (h <= 100) {
+                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/1-240516163232X5.png" alt="_翰汇所" />');
+                                headerTop.style.background = 'transparent';
+                                $('#text li a').css('color', '#fff');
+                            }
+                        }
+                    </script>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="apple-banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for banner in page.banners.all %}
+                <div class="swiper-slide">
+                    {% if banner.link %}<a href="{{ banner.link }}">{% endif %}
+                        {% if banner.image %}
+                        {% image banner.image original as img %}
+                        <img src='{{ img.url }}' alt='{{ banner.title }}' />
+                        {% endif %}
+                        <div class="index_text">
+                            <h3>{{ banner.title }}</h3>
+                            <p>{{ banner.subtitle }}</p>
+                        </div>
+                        {% if banner.link %}
+                    </a>{% endif %}
+                </div>
+                {% empty %}
+                <!-- 默认轮播图（后台未配置时显示） -->
+                <div class="swiper-slide">
+                    <img src='/uploads/allimg/20240516/slider1.jpg' alt='卓越 高效 公开 透明 实用专业的精细化服务' />
+                    <div class="index_text">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- 业务领域 start -->
+            <div class="indtjpro">
+                <div class="w1400">
+                    <div class="indbigbt">
+                        <div class="blank-top"></div>
+                        <span>业务领域</span>
+                        <div class="line"></div>
+                        <div class="blank-middle"></div>
+                    </div>
+                    <div class="swiper-container2">
+                        <ul class="yewulingyu">
+                            {% for item in page.service_items.all %}
+                            {% with item.link|default:"/yewulingyu/" as raw_link %}
+                            {% with raw_link|cut:"https://www.wushaobolawfirm.com"|cut:"http://www.wushaobolawfirm.com" as clean_link %}
+                            <li>
+                                <div class="libox">
+                                    <a href="{{ clean_link|default:'/yewulingyu/' }}" style="display:block">
+                                        {% if item.icon_red %}
+                                        {% image item.icon_red original as icon_r %}
+                                        <img src="{{ icon_r.url }}" alt="{{ item.title }}" class="svg1">
+                                        {% endif %}
+                                        {% if item.icon_white %}
+                                        {% image item.icon_white original as icon_w %}
+                                        <img src="{{ icon_w.url }}" alt="{{ item.title }}" class="svg2">
+                                        {% endif %}
+                                        <p>{{ item.title }}</p>
+                                        <hr>
+                                    </a>
+                                </div>
+                            </li>
+                            {% endwith %}
+                            {% endwith %}
+                            {% empty %}
+                            <!-- 默认业务领域（后台未配置时显示） -->
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-01.svg" alt="征收维权" class="svg1"><img
+                                            src="/uploads/allimg/20240425/white-01.svg" alt="征收维权" class="svg2">
+                                        <p>征收维权</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-02.svg" alt="拆迁维权" class="svg1"><img
+                                            src="/uploads/allimg/20240425/white-02.svg" alt="拆迁维权" class="svg2">
+                                        <p>拆迁维权</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-03.svg" alt="关停维权" class="svg1"><img
+                                            src="/uploads/allimg/20240425/white-03.svg" alt="关停维权" class="svg2">
+                                        <p>关停维权</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-04.svg" alt="涉企重大行政许可"
+                                            class="svg1"><img src="/uploads/allimg/20240425/white-07.svg" alt="涉企重大行政许可"
+                                            class="svg2">
+                                        <p>涉企重大行政许可/处罚/ 强制/决定/协议等法律事务</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-05.svg" alt="行政监管合规" class="svg1"><img
+                                            src="/uploads/allimg/20240425/white-05.svg" alt="行政监管合规" class="svg2">
+                                        <p>行政监管合规</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-06.svg" alt="商品房集团维权"
+                                            class="svg1"><img src="/uploads/allimg/20240425/white-06.svg" alt="商品房集团维权"
+                                            class="svg2">
+                                        <p>商品房集体维权</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-07.svg" alt="涉个人重大财产类行政争议"
+                                            class="svg1"><img src="/uploads/allimg/20240425/white-04.svg"
+                                            alt="涉个人重大财产类行政争议" class="svg2">
+                                        <p>涉个人重大财产类行政争议</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            <li>
+                                <div class="libox"><a href="/yewulingyu/" style="display:block"><img
+                                            src="/uploads/allimg/20240425/red%202-08.svg" alt="金融类法律服务"
+                                            class="svg1"><img src="/uploads/allimg/20240425/white-08.svg" alt="金融类法律服务"
+                                            class="svg2">
+                                        <p>金融类法律服务</p>
+                                        <hr>
+                                    </a></div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="blank-bottom"></div>
+                </div>
+            </div>
+            <!-- 业务领域 end -->
+
+            <!-- 专业团队 start -->
+            <div class="professional ">
+                <div class="large-box">
+                    <div class="w1400 zhuanye">
+                        <div class="team">
+                            <div class="blank-top"></div>
+                            <span>专业团队</span>
+                            <div class="line"></div>
+                            <div class="blank-middle"></div>
+                        </div>
+                        <div class="tem_wjy">
+                            <div class="t_left">
+                                <div class="jjinfo">
+                                    <div class="jjchild" style="display: block;">
+                                        <div class="tname" style="position:relative">
+                                            <div>
+                                                {% if page.main_lawyer_photo %}
+                                                {% image page.main_lawyer_photo fill-400x500 as lawyer_img %}
+                                                <img class="only_mobile" src="{{ lawyer_img.url }}"
+                                                    alt='{{ page.main_lawyer_name }}'
+                                                    title="{{ page.main_lawyer_name }}">
+                                                {% else %}
+                                                <img class="only_mobile"
+                                                    src="/uploads/allimg/20240528/1-24052P9510QD.jpg" alt='吴少博'
+                                                    title="吴少博">
+                                                {% endif %}
+                                            </div>
+                                            <h3 style="position:absolute;bottom: 10px; color: #fff;">
+                                                {{ page.main_lawyer_name|default:"吴少博" }}
+                                                <span>{{ page.main_lawyer_position|default:"北京吴少博律师事务所创始人、主任" }}</span>
+                                            </h3>
+                                        </div>
+                                        <div class="tlmore"><a
+                                                href="{{ page.main_lawyer_link|default:'/zhuanyetuandui/' }}"
+                                                target="_blank">查看详情</a></div>
+                                    </div>
+                                </div>
+                                <div class="timgbox pcclickBox">
+                                    <ul>
+                                        {% for member in team_list %}
+                                        <li style="position: relative;">
+                                            <a href="{% pageurl member %}">
+                                                {% if member.photo %}
+                                                {% image member.photo fill-150x180 as member_img %}
+                                                <img src="{{ member_img.url }}" alt='{{ member.title }}'
+                                                    title="{{ member.title }}">
+                                                {% endif %}
+                                            </a>
+                                        </li>
+                                        {% empty %}
+                                        <!-- 默认团队成员（后台未配置时显示） -->
+                                        <li style="position: relative;"><a href="/zhuanyetuandui/"><img
+                                                    src="/uploads/allimg/20240526/wjy03.png" alt='宋府育' title="宋府育"></a>
+                                        </li>
+                                        <li style="position: relative;"><a href="/zhuanyetuandui/"><img
+                                                    src="/uploads/allimg/20240526/wjy02.png" alt='石磊' title='石磊'></a>
+                                        </li>
+                                        <li style="position: relative;"><a href="/zhuanyetuandui/"><img
+                                                    src="/uploads/allimg/20240526/wjy01.png" alt='国紫宸' title="国紫宸"></a>
+                                        </li>
+                                        <li style="position: relative;"><a href="/zhuanyetuandui/"><img
+                                                    src="/uploads/allimg/20240526/wjy04.png" alt='吴洪涛' title="吴洪涛"></a>
+                                        </li>
+                                        <li style="position: relative;"><a href="/zhuanyetuandui/"><img
+                                                    src="/uploads/allimg/20240526/wjy05.png" alt='李宁宁' title="李宁宁"></a>
+                                        </li>
+                                        <li style="position: relative;"><a href="/zhuanyetuandui/"><img
+                                                    src="/uploads/allimg/20240526/wjy06.png" alt='李静' title="李静"></a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <div class="tmore"><a href="/zhuanyetuandui/">查看更多</a></div>
+                                </div>
+                            </div>
+                            <div class="t_right">
+                                <div class="lvshi">
+                                    <img src="/uploads/allimg/20240509/01.png" style="height: 740px;width: 400px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blank-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 专业团队 end -->
+
+        <!-- 经典案例 start -->
+        <div class="ind_article">
+            <div class="w1400">
+                <div class="indbigbt">
+                    <div class="blank-top"></div>
+                    <span>经典案例</span>
+                    <div class="line"></div>
+                    <div class="blank-middle"></div>
+                </div>
+                <div class="swiper-container3">
+                    <ul class="swiper-wrapper">
+                        {% for case in cases_list|slice:":1" %}
+                        <li class="swiper-slide">
+                            <div class="name"><a href="{% pageurl case %}">{{ case.title }}</a></div>
+                            <div class="line"></div>
+                            <div class="bottom">
+                                <div class="artfot">
+                                    <p>{{ case.date|date:"Y-m" }}</p>
+                                    <span>{{ case.date|date:"d" }}</span>
+                                </div>
+                                <a href="{% pageurl case %}" class="details">
+                                    <span>查看详情</span>
+                                    <img src="/uploads/allimg/20240429/%e7%ba%a2%e8%89%b2%e7%ae%ad%e5%a4%b4.svg" alt="">
+                                </a>
+                            </div>
+                        </li>
+                        {% empty %}
+                        <li class="swiper-slide">
+                            <div class="name"><a href="/jingdiananli/">暂无案例，敬请期待...</a></div>
+                            <div class="line"></div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="second_box">
+                        {% for case in cases_list|slice:"1:" %}
+                        <li>
+                            <div class="name"><a href="{% pageurl case %}">{{ case.title }}</a></div>
+                            <div class="line"></div>
+                            <div class="bottom">
+                                <div class="artfot">
+                                    <p>{{ case.date|date:"Y-m" }}</p>
+                                    <span>{{ case.date|date:"d" }}</span>
+                                </div>
+                                <a href="{% pageurl case %}" class="details">
+                                    <span>查看详情</span>
+                                    <img src="/uploads/allimg/20240429/%e7%ba%a2%e8%89%b2%e7%ae%ad%e5%a4%b4.svg" alt="">
+                                </a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <a href="/jingdiananli/" class="abmore">查看更多</a>
+                <div class="white"></div>
+            </div>
+        </div>
+        <script>
+            var ulgao = $('.second_box').height();
+            $('.swiper-container3 .swiper-wrapper').css('height', ulgao);
+        </script>
+        <!-- 经典案例 end-->
+
+        <!-- 新闻动态 start -->
+        <div class="News_updates">
+            <div class="w1400">
+                <div class="News">
+                    <div class="blank-top"></div>
+                    <span>新闻动态</span>
+                    <div class="line"></div>
+                    <a href="/xinwendongtai/">查看更多 ></a>
+                </div>
+                <div class="updates">
+                    <ul>
+                        {% for news in news_list %}
+                        <li class="wow zoomIn">
+                            <div class="lyNyVideo_img">
+                                <a href="{% pageurl news %}">
+                                    {% if news.image %}
+                                    {% image news.image fill-380x240 as news_img %}
+                                    <img src="{{ news_img.url }}" alt="{{ news.title }}" />
+                                    {% else %}
+                                    <img src="/uploads/allimg/20240520/1-240520152133M0.jpg" alt="{{ news.title }}" />
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="lyNyVideo_text">
+                                <a href="{% pageurl news %}" class="VideoName">{{ news.title }}</a>
+                                <div class="min">
+                                    <div class="line"></div>
+                                    <span class="date">{{ news.date|date:"Y.m.d" }}</span>
+                                    <a href="{% pageurl news %}" class="VideoBtn">
+                                        <span>查看详情</span>
+                                        <img src="/uploads/allimg/20240429/%e7%ba%a2%e8%89%b2%e7%ae%ad%e5%a4%b4.svg"
+                                            alt="">
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </li>
+                        {% empty %}
+                        <li class="wow zoomIn">
+                            <div class="lyNyVideo_text">
+                                <a href="/xinwendongtai/" class="VideoName">暂无新闻，敬请期待...</a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="blank-bottom"></div>
+        </div>
+        <!-- 新闻动态 end-->
+
+        <!-- 关于我们 start -->
+        <div class="about_us">
+            <div class="w1190">
+                <div class="us">
+                    <div class="blank-top"></div>
+                    <span>关于我们</span>
+                    <div class="line"></div>
+                    <div class="left">
+                        <div class="l_top">
+                            <img src="/uploads/allimg/20240513/us_01.png" alt="关于我们">
+                            <a href="/guanyuwomen/" style="display: block;">
+                                <div class="service">
+                                    <img src="/uploads/allimg/20240513/service.svg" alt="服务理念">
+                                    <p>服务理念</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l_bottom">
+                            <a href="/guanyuwomen/" style="display: block;">
+                                <div class="situation">
+                                    <img src="/uploads/allimg/20240513/situation.svg" alt="律所概况">
+                                    <p>律所概况</p>
+                                </div>
+                            </a>
+                            <div class="general">
+                                {% if page.about_intro %}
+                                {{ page.about_intro|richtext }}
+                                {% else %}
+                                <p style="text-align: justify;">
+                                    北京翰汇律师事务所（原北京吴少博律师事务所）总部位于中国北京，目前以北京为中心，以上海、广州、成都等省会城市和区域中心城市为支点，覆盖全国各大城市群和都市圈，逐步实现专业化、规模化、品牌化发展，联动多家行业机构等资源提升综合法律服务能力，跻身全国一流律所，成为全国不动产纠纷领域实战经验丰富的法律服务新锐品牌机构。
+                                </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="r_top">
+                        <a href="/guanyuwomen/" style="display: block;">
+                            <div class="develop">
+                                <img src="/uploads/allimg/20240513/develop.svg" alt="律所发展">
+                                <p>律所发展</p>
+                            </div>
+                        </a>
+                        <img src="/uploads/allimg/20240513/us_02.png" alt="" id="us_02">
+                    </div>
+                    <div class="r_bottom">
+                        <img src="/uploads/allimg/20240513/us_03.png" alt="" id="us_03">
+                        <a href="/guanyuwomen/" style="display: block;">
+                            <div class="characteristic">
+                                <img src="/uploads/allimg/20240513/characteristic.svg" alt="服务特色">
+                                <p>服务特色</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="blank-bottom"></div>
+        </div>
+        <!-- 关于我们 end-->
+
+        <!-- 知识课堂 start-->
+        <div class="indnew">
+            <div class="w1400">
+                <div class="indbigbt">
+                    <div class="blank-top"></div>
+                    <span>知识课堂</span>
+                    <div class="line"></div>
+                    <div class="blank-middle"></div>
+                </div>
+                <ul>
+                    {% for article in knowledge_list %}
+                    <li>
+                        <div class="container">
+                            <div class="pic">
+                                {% if article.image %}
+                                {% image article.image fill-300x200 as article_img %}
+                                <img src="{{ article_img.url }}" alt="{{ article.title }}">
+                                {% else %}
+                                <img src="/uploads/allimg/20240520/1-240520151153503.jpg" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                                <a href="{% pageurl article %}">{{ article.title }}</a>
+                                <div class="bottom">
+                                    <span>{{ article.date|date:"Y-m-d" }}</span>
+                                    <img src="/uploads/allimg/20240429/%e7%ba%a2%e8%89%b2%e7%ae%ad%e5%a4%b4.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% empty %}
+                    <li>
+                        <div class="container">
+                            <div class="content">
+                                <a href="/zhishiketang/">暂无内容，敬请期待...</a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="clear"></div>
+                <a href="/zhishiketang/" class="abmore">查看更多</a>
+                <div class="height"></div>
+            </div>
+        </div>
+        <!-- 知识课堂 end-->
+
+        {% include "includes/footer.html" %}
+
+        <script language="javascript" type="text/javascript"
+            src="{% static 'template/pc/skin/js/customer.js' %}"></script>
+        <script type="text/javascript" src="{% static 'template/pc/skin/js/jquery.js' %}"></script>
+</body>
+
+</html>

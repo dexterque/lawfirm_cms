@@ -1,0 +1,108 @@
+{% extends "base_subpage.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block page_content %}
+<div class="service-content" style="padding:30px 0;">
+    {% if page.intro %}
+    <div class="intro" style="margin-bottom:30px;">
+        {{ page.intro|richtext }}
+    </div>
+    {% endif %}
+
+    <div class="service-grid" style="display:flex;flex-wrap:wrap;gap:20px;">
+        {% for service in services %}
+        <div class="service-item"
+            style="width:calc(25% - 15px);min-width:200px;border:1px solid #eee;border-radius:8px;padding:20px;text-align:center;transition:all 0.3s;">
+            <a href="{% pageurl service %}" style="text-decoration:none;color:#333;">
+                {% if service.icon %}
+                {% image service.icon width-60 as icon %}
+                <img src="{{ icon.url }}" alt="{{ service.title }}" style="width:60px;height:60px;margin-bottom:15px;">
+                {% endif %}
+                <h3 style="margin:0 0 10px 0;font-size:16px;color:#333;">{{ service.title }}</h3>
+                {% if service.short_description %}
+                <p style="margin:0;font-size:14px;color:#666;line-height:1.6;">{{
+                    service.short_description|truncatechars:100 }}</p>
+                {% endif %}
+            </a>
+        </div>
+        {% empty %}
+        <!-- 默认显示业务领域内容 -->
+        <div class="mission-tab" style="width:100%;">
+            <ul class="first-u" style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:20px;">
+                <li class="tab active" style="flex:1;min-width:200px;">
+                    <div class="tab-button"
+                        style="background:#C20A14;padding:15px;border-radius:8px;text-align:center;">
+                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-02.svg" alt=""
+                            style="width:40px;height:40px;margin-bottom:10px;">
+                        <span style="display:block;color:#fff;">拆迁维权</span>
+                    </div>
+                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
+                        <ul style="list-style:none;padding:0;margin:0;">
+                            <li style="padding:5px 0;"><span>群体违法建筑拆除</span></li>
+                            <li style="padding:5px 0;"><span>城中村搬迁安置</span></li>
+                            <li style="padding:5px 0;"><span>非住宅企业厂房腾退</span></li>
+                            <li style="padding:5px 0;"><span>棚户区及危房改造搬迁安置</span></li>
+                            <li style="padding:5px 0;"><span>村委会自治腾退</span></li>
+                            <li style="padding:5px 0;"><span>环境整治</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="tab" style="flex:1;min-width:200px;">
+                    <div class="tab-button" style="background:#333;padding:15px;border-radius:8px;text-align:center;">
+                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-01.svg" alt=""
+                            style="width:40px;height:40px;margin-bottom:10px;">
+                        <span style="display:block;color:#fff;">征收维权</span>
+                    </div>
+                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
+                        <ul style="list-style:none;padding:0;margin:0;">
+                            <li style="padding:5px 0;"><span>国有土地征收</span></li>
+                            <li style="padding:5px 0;"><span>集体土地征收</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="tab" style="flex:1;min-width:200px;">
+                    <div class="tab-button" style="background:#333;padding:15px;border-radius:8px;text-align:center;">
+                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-03.svg" alt=""
+                            style="width:40px;height:40px;margin-bottom:10px;">
+                        <span style="display:block;color:#fff;">关停维权</span>
+                    </div>
+                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
+                        <ul style="list-style:none;padding:0;margin:0;">
+                            <li style="padding:5px 0;"><span>环保安全关停</span></li>
+                            <li style="padding:5px 0;"><span>产能淘汰整合</span></li>
+                            <li style="padding:5px 0;"><span>举报处罚关停</span></li>
+                            <li style="padding:5px 0;"><span>资源合并关停</span></li>
+                            <li style="padding:5px 0;"><span>公共利益原因关停</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="tab" style="flex:1;min-width:200px;">
+                    <div class="tab-button" style="background:#333;padding:15px;border-radius:8px;text-align:center;">
+                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-06.svg" alt=""
+                            style="width:40px;height:40px;margin-bottom:10px;">
+                        <span style="display:block;color:#fff;">商品房集体维权</span>
+                    </div>
+                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
+                        <ul style="list-style:none;padding:0;margin:0;">
+                            <li style="padding:5px 0;"><span>房屋质量问题</span></li>
+                            <li style="padding:5px 0;"><span>虚假宣传销售</span></li>
+                            <li style="padding:5px 0;"><span>小区规划变更</span></li>
+                            <li style="padding:5px 0;"><span>产证手续无法办理</span></li>
+                            <li style="padding:5px 0;"><span>无法交付烂尾</span></li>
+                            <li style="padding:5px 0;"><span>分割拆零售后包租</span></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .service-item:hover {
+        border-color: #C20A14;
+        box-shadow: 0 4px 12px rgba(194, 10, 20, 0.1);
+    }
+</style>
+{% endblock %}

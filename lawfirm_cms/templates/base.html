@@ -1,0 +1,238 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>{% block title %}北京翰汇律师事务所__翰汇所{% endblock %}</title>
+    <meta name="keywords" content="北京翰汇律师事务所,翰汇律师事务所,土地征收,拆迁,商品房,行政诉讼,法律维权,法律服务,律师咨询" />
+    <meta name="description" content="北京翰汇律师事务所是一家专注于征收、拆迁、环保、商品房的专业精品律师事务所,秉持“博思笃行,行法刚正,客户至上,鼎力维权”的理念,致力于为客户提供全方位、专业化法律服务。" />
+    <link href="{% static 'favicon.ico' %}" rel="shortcut icon" type="image/x-icon" />
+    <link href="{% static 'template/pc/skin/css/style.css' %}" rel="stylesheet" media="screen" type="text/css" />
+    <link href="{% static 'template/pc/skin/css/swiper.min.css' %}" rel="stylesheet" media="screen" type="text/css" />
+    <script language="javascript" type="text/javascript" src="{% static 'template/pc/skin/js/jquery-3.7.0.min.js' %}"></script>
+    <script language="javascript" type="text/javascript" src="{% static 'template/pc/skin/js/swiper.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'template/pc/skin/css/lsp_index.css' %}">
+    <style>
+        .only_mobile {
+            display: none
+        }
+
+        @media (max-width: 550px) {
+            .only_mobile {
+                display: block;
+                width: 100%
+            }
+
+            .tname h3 {
+                position: absolute;
+                bottom: 10px;
+                left: 5px;
+                color: #fff;
+            }
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    {% wagtailuserbar %}
+    <header>
+        <base target="_blank">
+        <div class="top_two" id="dao">
+            <div class="w1400">
+                <h1 class="logo">
+                    <a href="/" title="北京翰汇律师事务所">
+                        <img id="img_white" src="/media/uploads/allimg/20240516/1-240516163232X5.png" alt="北京翰汇律师事务所" />
+                        <img id="img_black" src=" " alt="北京翰汇律师事务所">
+                    </a>
+                </h1>
+                <nav>
+                    <div class="menu_open"> <i></i> <i></i> <i></i> </div>
+                    <div class="nav nav_class">
+                        <ul class="nav_ul" id="text">
+                            <li class="nav_item">
+                                <a href="/" id="navId1" class="navon">首页</a>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/jingdiananli/" id="navId2" class="">经典案例</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">经典案例</a></li>
+                                    <li class="nav_item2"><a href="/jingdiananli/">成功案例</a></li>
+                                    <li class="nav_item2"><a href="/huozengjinqi/">获赠锦旗</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/yewulingyu/" id="navId3" class="">业务领域</a> </li>
+                            <li class="nav_item" id="navF"><a href="/zhuanyetuandui/" id="navId4" class="">专业团队</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">专业团队</a></li>
+                                    <li class="nav_item2"><a href="/zhubanlvshi/">主办律师</a></li>
+                                    <li class="nav_item2"><a href="/lvshizhurenzhuli/">律师主任助理</a></li>
+                                    <li class="nav_item2"><a href="/lvshiyewuzhuli/">律师业务助理</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/xinwendongtai/" id="navId5" class="">新闻动态</a> </li>
+                            <li class="nav_item" id="navF"><a href="/zhishiketang/" id="navId6" class="">知识课堂</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">知识课堂</a></li>
+                                    <li class="nav_item2"><a href="/zhishiketang/">专业文章</a></li>
+                                    <li class="nav_item2"><a href="/pufashipin/">普法视频</a></li>
+                                    <li class="nav_item2"><a href="/weiquanshuji/">维权书籍</a></li>
+                                    <li class="nav_item2"><a href="/redianpufa/">热点普法</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav_item" id="navF"><a href="/guanyuwomen/" id="navId7" class="">关于我们</a><i></i>
+                                <ul class="nav_item_open">
+                                    <li class="subopen"><a href="javascript:;">关于我们</a></li>
+                                    <li class="nav_item2"><a href="/guanyuwomen/">律所介绍</a></li>
+                                    <li class="nav_item2"><a href="/lianxiwomen/">联系我们</a></li>
+                                    <li class="nav_item2"><a href="/jiarulvsuo/">加入律所</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hcover"></div>
+                    <style>
+                        #dao {
+                            position: fixed;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            width: 100%;
+                            height: 70px;
+                            z-index: 999;
+                        }
+
+                        #img_white {
+                            display: block !important;
+                        }
+
+                        #img_black {
+                            display: none !important;
+                        }
+                    </style>
+                    <script language="javascript" type="text/javascript">
+                        try {
+                            document.getElementById("navId" + nav).className = "navon";
+                        } catch (e) {}
+                        window.onscroll = function a() {
+                            var h = document.documentElement.scrollTop || document.body.scrollTop;
+                            var headerTop = document.getElementById('dao'); // 获取导航栏id
+                            var Text = document.getElementById('navId1');
+                            var Text1 = document.getElementById('navId2');
+                            var Text2 = document.getElementById('navId3');
+                            var Text3 = document.getElementById('navId4');
+                            var Text4 = document.getElementById('navId5');
+                            var Text5 = document.getElementById('navId6');
+                            var Text6 = document.getElementById('navId7');
+                            var Text7 = document.getElementById('navId8');
+                            var img_white = document.getElementById('img_white')
+                            var img_black = document.getElementById('img_black')
+                            if (h > 100) {
+                                $('.logo a').html('<img id="img_white" src="/media/uploads/allimg/20240516/logo-black.png " alt="_翰汇所" />');
+                                headerTop.style.background = '#fff';
+                                Text.style.color = '#000'
+                                Text1.style.color = '#000'
+                                Text2.style.color = '#000'
+                                Text3.style.color = '#000'
+                                Text4.style.color = '#000'
+                                Text5.style.color = '#000'
+                                Text6.style.color = '#000'
+                                Text7.style.color = '#000'
+                                img_white.style.display = 'none'
+                                img_black.style.display = 'block'
+                            } else if (h <= 100) {
+                                $('.logo a').html('<img id="img_white" src="/media/uploads/allimg/20240516/1-240516163232X5.png" alt="_翰汇所" />');
+                                headerTop.style.background = 'transparent';
+                                Text.style.color = '#fff'
+                                Text1.style.color = '#fff'
+                                Text2.style.color = '#fff'
+                                Text3.style.color = '#fff'
+                                Text4.style.color = '#fff'
+                                Text5.style.color = '#fff'
+                                Text6.style.color = '#fff'
+                                Text7.style.color = '#fff'
+                                img_white.style.display = 'block'
+                                img_black.style.display = 'none'
+                            }
+                        }
+                    </script>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer ">
+        <div class="footer-nav w1400">
+            <div class="index-container">
+                <div class="nav-list">
+                    <a href="/jingdiananli/" title="经典案例">经典案例</a>
+                    <a href="/yewulingyu/" title="业务领域">业务领域</a>
+                    <a href="/zhuanyetuandui/" title="专业团队">专业团队</a>
+                    <a href="/xinwendongtai/" title="新闻动态">新闻动态</a>
+                    <a href="/zhishiketang/" title="知识课堂">知识课堂</a>
+                    <a href="/guanyuwomen/" title="关于我们">关于我们</a>
+                </div>
+            </div>
+        </div>
+        <div class="w1400">
+            <!-- 留言中心 start-->
+            <div class="message">
+                <div class="banner_tips">
+                    <div class="container">
+                        <div class="content">
+                            <form action="#" method="post">
+                                <div class="form_box">
+                                    <input class="login_input" name="attr_1" type="text" id="attr_1" placeholder="请输入您的姓名" />
+                                    <input class="login_input" name="attr_2" type="text" id="attr_2" placeholder="请输入您的手机号码" />
+                                    <input class="login_input" name="attr_3" type="text" id="attr_3" placeholder="请输入您的大致案情" />
+                                    <button>提交信息</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 留言中心 end-->
+        </div>
+        <div class="copyright w1400">
+            <div class="index-container">
+                <p>Copyright © 2012-2024 北京翰汇律师事务所 版权所有<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">京ICP备15006976号-1</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript" src="{% static 'template/pc/skin/js/customer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'template/pc/skin/js/jquery.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var windowWidth = $(window).width();
+            if (windowWidth <= 425) {
+                $('.right .r_top .develop').css('height', $('#us_02').height());
+                $('.right .r_bottom .characteristic').css('height', $('#us_03').height());
+            }
+            if (windowWidth >= 700 && windowWidth <= 770) {
+                $('.swiper-container3 .swiper-wrapper').css('height', $('.second_box').height());
+            }
+            $(window).resize(function() {
+                var newWindowWidth = $(window).width();
+                if (newWindowWidth <= 425) {
+                    $('.right .r_top .develop').css('height', $('#us_02').height());
+                    $('.right .r_bottom .characteristic').css('height', $('#us_03').height());
+                }
+                if (windowWidth >= 700 && windowWidth <= 770) {
+                    $('.swiper-container3 .swiper-wrapper').css('height', $('.second_box').height());
+                }
+            });
+        });
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+{% extends "base_subpage.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block page_content %}
+<div class="case_main">
+    <ul>
+        {% for article in articles %}
+        <li class="wow zoomIn">
+            <div class="lyNyVideo_img">
+                <a href="{% pageurl article %}">
+                    {% if article.image %}
+                        {% image article.image fill-380x220 as article_img %}
+                        <img src="{{ article_img.url }}" alt="{{ article.title }}">
+                    {% else %}
+                        <img src="/uploads/allimg/20240520/1-240520152133M0.jpg" alt="{{ article.title }}">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="lyNyVideo_text">
+                <a href="{% pageurl article %}" class="VideoName">{{ article.title }}</a>
+                <div class="line"></div>
+                {% if article.intro %}
+                    <p>{{ article.intro|truncatechars:100 }}</p>
+                {% endif %}
+                <span>{{ article.date|date:"Y.m.d" }}</span>
+                <a href="{% pageurl article %}" class="VideoBtn">
+                    <span>查看详情</span>
+                    <img src="/uploads/allimg/20240429/%e7%ba%a2%e8%89%b2%e7%ae%ad%e5%a4%b4.svg" alt="">
+                </a>
+                <div class="clear"></div>
+            </div>
+        </li>
+        {% empty %}
+        <div style="padding:40px;text-align:center;color:#999;">
+            暂无文章，敬请期待...
+        </div>
+        {% endfor %}
+        <div class="clear"></div>
+    </ul>
+</div>
+
+<script>
+    // 高亮导航：新闻动态
+    var nav = 5;
+</script>
+{% endblock %}

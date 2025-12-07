@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+
+# DB/Logs
+*.log
+*.sqlite3
+*.sqlite
+
+# Media uploads (large assets)
+media/
+
+# Node/build artifacts
+node_modules/
+theme/static_src/node_modules/
+*.cache
+.dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Venv configs
+.env.local
+.env.*
+
+# IDE
+.vscode/
+.idea/

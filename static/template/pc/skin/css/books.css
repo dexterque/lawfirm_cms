@@ -1,0 +1,268 @@
+.books_Main .l-books {
+    padding: 0;
+}
+
+.books_Main .l-books-column {
+    display: flex;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.books_Main .l-books-column a {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    border: 0px;
+}
+
+.books_Main .l-books-column a img {
+    width: 100%;
+}
+
+.books_Main .l-books-column a.active {
+    background: none;
+}
+
+.books_Main .l-books .large_box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.books_Main .l-books .large_box li {
+    width: 48.333%;
+    margin-right: 3.334%;
+}
+.books_Main .classroom_List ul li {
+    margin: 0 0 15px 0!important;
+}
+
+.books_Main .l-books .large_box li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.books_Main .l-books .large_box li .content {
+    background-image: url(../../../../uploads/allimg/20240624/01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 460px;
+    padding: 40px 85px 40px;
+    margin-bottom: 20px;
+}
+
+.books_Main .l-books .large_box li .content h4 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+.books_Main .l-books .large_box li .content p {
+    font-size: 12px;
+    color: #333333;
+    line-height: 22px;
+    margin-bottom: 40px;
+
+}
+
+.books_Main .l-books .large_box li .content img {
+    margin: 0 auto;
+}
+
+.books_Main .l-books .large_box li .bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 110px;
+    margin-bottom: 30px;
+}
+
+.books_Main .l-books .large_box li .bottom span {
+    width: 100px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #000000;
+    text-align: center;
+
+}
+
+.books_Main .l-books .large_box li .bottom span a {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;
+}
+
+.classroom_List ul li .NyNews_Text {
+    padding: 5px !important;
+}
+
+.classroom_List ul li .NyNews_Text a.NyNews_Name {
+    font-size: 18px !important;
+    font-weight: 400;
+}
+
+@media (max-width:1200px) {
+    .books_Main .l-books .large_box li .bottom {
+        padding: 0 80px;
+    }
+}
+
+@media (max-width:1080px) {
+    .books_Main .l-books .large_box li .bottom {
+        padding: 0 50px;
+    }
+
+    .books_Main .l-books .large_box li .content h4 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:1024px) {
+    .books_Main .l-books .large_box li .content h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:950px) {
+    .books_Main .l-books .large_box li .bottom {
+        padding: 0 20px;
+    }
+
+}
+
+@media (max-width:768px) {
+    .books_Main .l-books .large_box li .bottom {
+        padding: 0 5px;
+    }
+
+    .books_Main .l-books .large_box li .content {
+        padding: 40px 45px 40px;
+        height: 420px;
+
+    }
+}
+
+@media (max-width:680px) {
+    .books_Main .l-books .large_box li .bottom span {
+        width: 80px;
+    }
+}
+
+@media (max-width:500px) {
+    .books_Main .l-books .large_box li {
+        width: 100%;
+    }
+
+    .books_Main .l-books .large_box li .bottom {
+        padding: 0 30px;
+    }
+}
+
+
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    /* 默认隐藏 */
+    position: fixed;
+    /* 固定在视口 */
+    z-index: 1;
+    /* 置于其他元素之上 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* 全屏宽度 */
+    height: 100%;
+    /* 全屏高度 */
+    overflow: auto;
+    /* 允许滚动 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 黑色背景，半透明 */
+}
+
+/* 弹窗内容样式 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% 从顶部开始，水平居中 */
+    padding: 20px;
+    border: 1px solid #888;
+    /* 弹窗宽度 */
+    width: 25%;
+    border-radius: 20px;
+}
+
+/* 关闭按钮样式 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modal-content li {
+    margin-bottom: 10px;
+}
+
+.modal .modal-content .login_textarea {
+    width: 100%;
+}
+
+.modal .modal-content .login_btn {
+    padding: 2px 5px;
+}
+
+@media (max-width:1450px) {
+    .modal-content {
+        /* 弹窗宽度 */
+        width: 30%;
+    }
+
+}
+
+@media (max-width:1080px) {
+    .modal-content {
+        /* 弹窗宽度 */
+        width: 35%;
+    }
+
+}
+@media (max-width:960px) {
+    .modal-content {
+        /* 弹窗宽度 */
+        width: 40%;
+    }
+
+}
+@media (max-width:768px) {
+    .modal-content {
+        /* 弹窗宽度 */
+        width: 50%;
+    }
+
+}
+
+@media (max-width:680px) {
+    .modal-content {
+        /* 弹窗宽度 */
+        width: 60%;
+    }
+
+}
+@media (max-width:500px) {
+    .modal-content {
+        /* 弹窗宽度 */
+        width: 80%;
+    }
+
+}
