@@ -1,0 +1,10 @@
+id,title,position,current_role,suggested_role,suggested_label,reason
+28,吴少博,创始人、主任律师,,chief_assistant,律师主任助理,matched_position
+29,宋府育,合伙人律师,,,,no_match
+30,石磊,专职律师,,,,no_match
+31,宋府育,律师,,,,no_match
+32,石磊,律师,,,,no_match
+33,国紫宸,律师,,,,no_match
+34,吴洪涛,律师,,,,no_match
+35,李宁宁,律师,,,,no_match
+36,李静,律师主任助理,chief_assistant,chief_assistant,律师主任助理,already_set

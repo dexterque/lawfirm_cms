@@ -1490,7 +1490,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 .professional {
     width: 100%;
     padding: 60px 0;
-    background-image: url(../../../../../qiniuyun.wushaobolawfirm.com/wushaobo-web/image/bg-Professional_team.png_%3b%20filename_%3dutf-8%27%27bg-Professional_team.png);
+    background-image: url('https://qiniuyun.wushaobolawfirm.com/wushaobo-web/image/bg-Professional_team.png');
     background-size: cover;
 }
 
@@ -3058,7 +3058,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 /* 首页 新闻动态 start */
 .News_updates {
     width: 100%;
-    background-image: url(../../../../../qiniuyun.wushaobolawfirm.com/wushaobo-web/image/news.png_%3b%20filename_%3dutf-8%27%27news.png);
+    background-image: url('https://qiniuyun.wushaobolawfirm.com/wushaobo-web/image/news.png');
     background-size: cover;
 }
 
@@ -3533,7 +3533,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 /* 首页 关于我们 start */
 .about_us {
     width: 100%;
-    background-image: url(../../../../../qiniuyun.wushaobolawfirm.com/wushaobo-web/image/about_us.png_%3b%20filename_%3dutf-8%27%27about_us.png);
+    background-image: url('https://qiniuyun.wushaobolawfirm.com/wushaobo-web/image/about_us.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
