@@ -1129,7 +1129,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 /*首页 业务领域 start */
 .indtjpro {
     width: 100%;
-    background-image: url(../../../../uploads/allimg/20240425/bg-Business_area.jpg);
+    background-image: url(../images/business/bg-Business_area.jpg);
     background-size: cover;
 }
 
@@ -1241,23 +1241,23 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 }  
 .yewulingyu li{padding: unset !important; width: 25% !important;margin: unset !important;height: 260px !important;margin-top: 10px !important;margin-bottom: 10px !important;background: unset !important;float: left;}
 .yewulingyu .libox{margin: 10px; padding: 20px;   background: #fff;border-radius: 10px; height: 260px !important;padding-top: 30px; border:1px solid #eee; transition: all .3s ease; text-align: center;background-repeat:no-repeat;background-position:center;}
-.yewulingyu li:nth-child(1):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-0.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(1):hover .libox{background-image: url(../images/business/type%204-0.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(2):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-1.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(2):hover .libox{background-image: url(../images/business/type%204-1.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(3):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-2.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(3):hover .libox{background-image: url(../images/business/type%204-2.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(4):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-3.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(4):hover .libox{background-image: url(../images/business/type%204-3.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(5):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-4.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(5):hover .libox{background-image: url(../images/business/type%204-4.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(6):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-5.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(6):hover .libox{background-image: url(../images/business/type%204-5.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(7):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-6.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(7):hover .libox{background-image: url(../images/business/type%204-6.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(8):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-7.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(8):hover .libox{background-image: url(../images/business/type%204-7.jpg);    background-size: 100% 100%;}
 
-.yewulingyu li:nth-child(9):hover .libox{background-image: url(../../../../uploads/allimg/20240425/type%204-7.jpg);    background-size: 100% 100%;}
+.yewulingyu li:nth-child(9):hover .libox{background-image: url(../images/business/type%204-7.jpg);    background-size: 100% 100%;}
 
 .indtjpro ul li img{margin-left: auto;margin-right: auto;}
 .svg2{display: none;}
