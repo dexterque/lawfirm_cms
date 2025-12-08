@@ -1485,7 +1485,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 }
 
 .professional .large-box {
-    background-image: url(../../../../uploads/allimg/20240426/bg-largr_box.png);
+    background-image: url(../images/bg-largr_box.png);
     background-size: cover;
 }
 
@@ -2715,7 +2715,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 }
 
 .ind_article {
-    background-image: url(../../../../uploads/allimg/20240510/article.png);
+    background-image: url(../images/article.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -2743,7 +2743,7 @@ header .top_two .w1400 nav ul .nav_item:last-child {
 }
 
 .ind_article .swiper-wrapper li:first-child {
-    background-image: url(../../../../uploads/allimg/20240510/left.png);
+    background-image: url(../images/left.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
