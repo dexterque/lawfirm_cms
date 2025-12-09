@@ -30,8 +30,6 @@ INSTALLED_APPS = [
     "team",
     "about",
     "service",
-    "tailwind",
-    "theme",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -167,14 +165,6 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10_000
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = "lawfirm_cms"
-
-# Tailwind settings
-TAILWIND_APP_NAME = 'theme'
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
-NPM_BIN_PATH = r"D:\Program Files\nodejs\npm.cmd"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
