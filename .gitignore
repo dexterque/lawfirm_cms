@@ -12,7 +12,7 @@ venv/
 *.sqlite
 
 # Media uploads (large assets)
-# media/
+media/
 
 # Node/build artifacts
 node_modules/

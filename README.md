@@ -17,6 +17,85 @@ ALLOWED_HOSTS = ["your-domain.com", "服务器IP"]
 ```
 生产启动时务必设置环境变量 `DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production`。
 
+## Ubuntu 部署速查（浓缩版）
+1. 安装基础软件  
+   ```bash
+   sudo apt update
+   sudo apt install -y python3-venv python3-pip nginx git
+   # 如需 PostgreSQL：sudo apt install postgresql postgresql-contrib libpq-dev
+   ```
+2. 获取代码与依赖  
+   ```bash
+   git clone <repo> /var/www/lawfirm
+   cd /var/www/lawfirm/lawfirm_cms
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -U pip
+   pip install -r requirements.txt
+   ```
+3. 配置并初始化  
+   - 创建 `lawfirm_cms/lawfirm_cms/settings/local.py`，设置 `SECRET_KEY`、`ALLOWED_HOSTS`，如用 PostgreSQL 则调整 `DATABASES`。  
+   - 生产环境变量：`export DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production`  
+   - 迁移与静态文件：  
+     ```bash
+     python manage.py migrate
+     python manage.py collectstatic --noinput
+     ```
+   - 创建后台账号：`python manage.py createsuperuser`
+4. 使用 Gunicorn 启动（临时验证）  
+   ```bash
+   gunicorn lawfirm_cms.wsgi:application \
+     --bind 0.0.0.0:8000 \
+     --env DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production
+   ```
+5. 配置 systemd（长期运行）  
+   将下列示例保存为 `/etc/systemd/system/lawfirm-cms.service`，路径按实际调整：  
+   ```ini
+   [Unit]
+   Description=Law Firm CMS
+   After=network.target
+
+   [Service]
+   User=www-data
+   Group=www-data
+   WorkingDirectory=/var/www/lawfirm/lawfirm_cms
+   Environment="DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production"
+   Environment="PATH=/var/www/lawfirm/lawfirm_cms/.venv/bin"
+   ExecStart=/var/www/lawfirm/lawfirm_cms/.venv/bin/gunicorn lawfirm_cms.wsgi:application --bind 127.0.0.1:8000
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+   使能并启动：`sudo systemctl enable --now lawfirm-cms`
+6. 配置 Nginx 反向代理  
+   `/etc/nginx/sites-available/lawfirm` 示例：  
+   ```nginx
+   server {
+       listen 80;
+       server_name your-domain.com;
+
+       location /static/ { alias /var/www/lawfirm/lawfirm_cms/static/; }
+       location /media/  { alias /var/www/lawfirm/lawfirm_cms/media/; }
+       location / {
+           proxy_pass http://127.0.0.1:8000;
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+       }
+   }
+   ```
+   启用：`sudo ln -s /etc/nginx/sites-available/lawfirm /etc/nginx/sites-enabled/`  
+   检查并重载：`sudo nginx -t && sudo systemctl reload nginx`
+7. 配置 HTTPS（可选但推荐）  
+   ```bash
+   sudo apt install -y certbot python3-certbot-nginx
+   sudo certbot --nginx -d your-domain.com
+   ```
+8. 仅部署静态快照（若无需动态后台）  
+   可让 Nginx 直接 `root /var/www/lawfirm/www.wushaobolawfirm.com;` 作为纯静态站点。
+
 ## 部署步骤（非 Docker）
 1) 系统依赖  
    ```bash
