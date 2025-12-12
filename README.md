@@ -26,8 +26,8 @@ ALLOWED_HOSTS = ["your-domain.com", "服务器IP"]
    ```
 2. 获取代码与依赖  
    ```bash
-   git clone <repo> /var/www/lawfirm
-   cd /var/www/lawfirm/lawfirm_cms
+   git clone <repo> /var/www/lawfirm_cms
+   cd /var/www/lawfirm_cms
    python3 -m venv .venv
    source .venv/bin/activate
    pip install -U pip
@@ -58,10 +58,10 @@ ALLOWED_HOSTS = ["your-domain.com", "服务器IP"]
    [Service]
    User=www-data
    Group=www-data
-   WorkingDirectory=/var/www/lawfirm/lawfirm_cms
+   WorkingDirectory=/var/www/lawfirm_cms
    Environment="DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production"
-   Environment="PATH=/var/www/lawfirm/lawfirm_cms/.venv/bin"
-   ExecStart=/var/www/lawfirm/lawfirm_cms/.venv/bin/gunicorn lawfirm_cms.wsgi:application --bind 127.0.0.1:8000
+   Environment="PATH=/var/www/lawfirm_cms/.venv/bin"
+   ExecStart=/var/www/lawfirm_cms/.venv/bin/gunicorn lawfirm_cms.wsgi:application --bind 127.0.0.1:8000
    Restart=always
 
    [Install]
@@ -75,8 +75,8 @@ ALLOWED_HOSTS = ["your-domain.com", "服务器IP"]
        listen 80;
        server_name your-domain.com;
 
-       location /static/ { alias /var/www/lawfirm/lawfirm_cms/static/; }
-       location /media/  { alias /var/www/lawfirm/lawfirm_cms/media/; }
+       location /static/ { alias /var/www/lawfirm_cms/static/; }
+       location /media/  { alias /var/www/lawfirm_cms/media/; }
        location / {
            proxy_pass http://127.0.0.1:8000;
            proxy_set_header Host $host;
@@ -94,7 +94,7 @@ ALLOWED_HOSTS = ["your-domain.com", "服务器IP"]
    sudo certbot --nginx -d your-domain.com
    ```
 8. 仅部署静态快照（若无需动态后台）  
-   可让 Nginx 直接 `root /var/www/lawfirm/www.wushaobolawfirm.com;` 作为纯静态站点。
+   可让 Nginx 直接 `root /var/www/lawfirm_cms/www.wushaobolawfirm.com;` 作为纯静态站点。
 
 ## 部署步骤（非 Docker）
 1) 系统依赖  
