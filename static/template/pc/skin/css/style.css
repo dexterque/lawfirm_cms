@@ -340,6 +340,22 @@ header .top_two .w1400 nav ul .nav_item:last-child {
     -moz-box-sizing: border-box
 }
 
+@media screen and (min-width:1081px) {
+    .nav_item_open {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav_item_open .nav_item2 a,
+    .nav_item_open .subopen a {
+        color: #1f1f1f;
+    }
+
+    .nav_item_open .nav_item2:hover a {
+        color: #1f1f1f;
+    }
+}
+
 .ny_top .nav_item2 a {
     color: #565656
 }
