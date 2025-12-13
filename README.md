@@ -1,198 +1,140 @@
-# Law Firm CMS 部署指南 (Ubuntu)
+# Law Firm CMS
 
-基于 Django 5 + Wagtail 的律所官网/内容管理系统，代码位于 `lawfirm_cms/` 目录。下文以 Ubuntu 20.04/22.04 为例说明从零到上线的流程。
+律所内容管理系统，基于 Django + Wagtail 构建。
 
-## 环境要求
-- Python 3.10+（推荐与 Dockerfile 一致的 3.12）
-- pip / venv
-- SQLite 默认即可；如需 PostgreSQL 请在 `settings/local.py` 中调整 `DATABASES`
-- 可选：Node.js（仅在重新编译 Tailwind 时需要）
+## Ubuntu 简易部署指南
 
-## 生产环境配置（必须）
-在 `lawfirm_cms/lawfirm_cms/settings/local.py` 新建文件，填入至少以下内容：
-```python
-SECRET_KEY = "请替换为强随机字符串"
-ALLOWED_HOSTS = ["your-domain.com", "服务器IP"]
-# 如果改用 PostgreSQL，配置 DATABASES 并安装 libpq-dev、psycopg2-binary
+以下步骤适用于 Ubuntu 20.04/22.04/24.04。
+
+### 1. 安装基础环境
+
+首先更新系统并安装必要的 Python 和 Nginx 组件：
+
+```bash
+sudo apt update
+sudo apt install -y python3-venv python3-pip python3-dev nginx git
 ```
-生产启动时务必设置环境变量 `DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production`。
 
-## Ubuntu 部署速查（浓缩版）
-1. 安装基础软件  
-   ```bash
-   sudo apt update
-   sudo apt install -y python3-venv python3-pip nginx git
-   # 如需 PostgreSQL：sudo apt install postgresql postgresql-contrib libpq-dev
-   ```
-2. 获取代码与依赖  
-   ```bash
-   git clone <repo> /var/www/lawfirm_cms
-   cd /var/www/lawfirm_cms
-   python3 -m venv .venv
-   source .venv/bin/activate
-   pip install -U pip
-   pip install -r requirements.txt
-   ```
-3. 配置并初始化  
-   - 创建 `lawfirm_cms/lawfirm_cms/settings/local.py`，设置 `SECRET_KEY`、`ALLOWED_HOSTS`，如用 PostgreSQL 则调整 `DATABASES`。  
-   - 生产环境变量：`export DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production`  
-   - 迁移与静态文件：  
-     ```bash
-     python manage.py migrate
-     python manage.py collectstatic --noinput
-     ```
-   - 创建后台账号：`python manage.py createsuperuser`
-4. 使用 Gunicorn 启动（临时验证）  
-   ```bash
-   gunicorn lawfirm_cms.wsgi:application \
-     --bind 0.0.0.0:8000 \
-     --env DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production
-   ```
-5. 配置 systemd（长期运行）  
-   将下列示例保存为 `/etc/systemd/system/lawfirm-cms.service`，路径按实际调整：  
-   ```ini
-   [Unit]
-   Description=Law Firm CMS
-   After=network.target
+### 2. 获取代码与安装依赖
 
-   [Service]
-   User=www-data
-   Group=www-data
-   WorkingDirectory=/var/www/lawfirm_cms
-   Environment="DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production"
-   Environment="PATH=/var/www/lawfirm_cms/.venv/bin"
-   ExecStart=/var/www/lawfirm_cms/.venv/bin/gunicorn lawfirm_cms.wsgi:application --bind 127.0.0.1:8000
-   Restart=always
+建议将代码放在 `/var/www/` 或用户主目录下。
 
-   [Install]
-   WantedBy=multi-user.target
-   ```
-   使能并启动：`sudo systemctl enable --now lawfirm-cms`
-6. 配置 Nginx 反向代理  
-   `/etc/nginx/sites-available/lawfirm` 示例：  
-   ```nginx
-   server {
-       listen 80;
-       server_name your-domain.com;
+```bash
+# 1. 下载代码 (请替换为实际仓库地址)
+git clone <你的仓库地址> lawfirm_cms
+cd lawfirm_cms
 
-       location /static/ { alias /var/www/lawfirm_cms/static/; }
-       location /media/  { alias /var/www/lawfirm_cms/media/; }
-       location / {
-           proxy_pass http://127.0.0.1:8000;
-           proxy_set_header Host $host;
-           proxy_set_header X-Real-IP $remote_addr;
-           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-           proxy_set_header X-Forwarded-Proto $scheme;
-       }
-   }
-   ```
-   启用：`sudo ln -s /etc/nginx/sites-available/lawfirm /etc/nginx/sites-enabled/`  
-   检查并重载：`sudo nginx -t && sudo systemctl reload nginx`
-7. 配置 HTTPS（可选但推荐）  
-   ```bash
-   sudo apt install -y certbot python3-certbot-nginx
-   sudo certbot --nginx -d your-domain.com
-   ```
-8. 仅部署静态快照（若无需动态后台）  
-   可让 Nginx 直接 `root /var/www/lawfirm_cms/www.wushaobolawfirm.com;` 作为纯静态站点。
+# 2. 创建并激活虚拟环境
+python3 -m venv venv
+source venv/bin/activate
 
-## 部署步骤（非 Docker）
-1) 系统依赖  
-   ```bash
-   sudo apt update
-   sudo apt install -y python3-venv python3-dev build-essential libpq-dev libjpeg-dev zlib1g-dev libwebp-dev
-   ```
-2) 获取代码  
-   ```bash
-   git clone <your_repo_url> laws
-   cd laws/lawfirm_cms
-   ```
-3) 创建虚拟环境并安装依赖  
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate
-   pip install --upgrade pip
-   pip install -r requirements.txt
-   ```
-4) 数据库迁移与静态资源  
-   ```bash
-   export DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production
-   python manage.py migrate
-   python manage.py collectstatic --noinput
-   ```
-5) 创建后台管理员  
-   ```bash
-   python manage.py createsuperuser
-   ```
-6) 启动应用  
-   开发验证：`python manage.py runserver 0.0.0.0:8000 --settings=lawfirm_cms.settings.production`  
-   正式环境（推荐）：  
-   ```bash
-   gunicorn lawfirm_cms.wsgi:application \
-     --bind 0.0.0.0:8000 \
-     --env DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production
-   ```
+# 3. 安装项目依赖
+pip install -r requirements.txt
 
-## systemd 示例（可选）
-将下述内容保存到 `/etc/systemd/system/lawfirm-cms.service`，并根据实际路径调整：
+# 4. 安装生产应用服务器 (requirements.txt 中未包含)
+pip install gunicorn
+```
+
+### 3. 项目配置
+
+在 `lawfirm_cms/settings/` 目录下创建 `local.py` 文件，填入生产环境配置：
+
+`nano lawfirm_cms/settings/local.py`
+
+```python
+from .base import *
+
+# !!! 必须修改为独特的随机字符串 !!!
+SECRET_KEY = 'change-me-to-a-secure-random-secret-key'
+
+# 允许访问的域名和IP
+ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com', '服务器公网IP']
+
+DEBUG = False
+```
+
+### 4. 初始化数据
+
+```bash
+# 收集静态文件 (CSS/JS)
+python manage.py collectstatic --noinput
+
+# 创建数据库表
+python manage.py migrate
+
+# 创建后台管理员账号
+python manage.py createsuperuser
+```
+
+### 5. 启动服务 (使用 Gunicorn)
+
+我们使用 Systemd 来管理服务，确保它在后台运行并在开机时自动启动。
+
+创建服务文件：
+`sudo nano /etc/systemd/system/lawfirm.service`
+
+写入以下内容（**注意修改路径**）：
+
 ```ini
 [Unit]
-Description=Law Firm CMS
+Description=Law Firm CMS Gunicorn Daemon
 After=network.target
 
 [Service]
-User=www-data
-Group=www-data
-WorkingDirectory=/opt/laws/lawfirm_cms
-Environment="DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production"
-Environment="PATH=/opt/laws/lawfirm_cms/.venv/bin"
-ExecStart=/opt/laws/lawfirm_cms/.venv/bin/gunicorn lawfirm_cms.wsgi:application --bind 0.0.0.0:8000
+# 运行用户，通常推荐使用当前用户或 www-data
+User=root
+# 项目所在目录 (请修改为实际路径!)
+WorkingDirectory=/root/lawfirm_cms
+# Gunicorn 命令路径 (在虚拟环境中)
+ExecStart=/root/lawfirm_cms/venv/bin/gunicorn lawfirm_cms.wsgi:application --bind 127.0.0.1:8000 --workers 3
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
 ```
-启动并自启：`sudo systemctl enable --now lawfirm-cms`.
 
-## Nginx 反向代理（示例）
+启动并设置开机自启：
+```bash
+sudo systemctl start lawfirm
+sudo systemctl enable lawfirm
+```
+
+### 6. 配置 Nginx (对外发布)
+
+配置 Nginx 处理静态文件并将流量转发到 Gunicorn。
+
+创建配置文件：
+`sudo nano /etc/nginx/sites-available/lawfirm`
+
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com;
+    server_name yourdomain.com; # 替换域名或IP
 
+    # 静态文件路径 (请修改为实际路径!)
     location /static/ {
-        alias /opt/laws/lawfirm_cms/static/;
+        alias /root/lawfirm_cms/static/;
     }
+
+    # 媒体文件路径 (上传的图片等)
     location /media/ {
-        alias /opt/laws/lawfirm_cms/media/;
+        alias /root/lawfirm_cms/media/;
     }
+
     location / {
         proxy_pass http://127.0.0.1:8000;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
 ```
 
-## Docker 部署（可选）
-在仓库根目录执行：
+启用配置并重启 Nginx：
 ```bash
-cd lawfirm_cms
-docker build -t lawfirm-cms .
-docker run -d --name lawfirm-cms -p 8000:8000 \
-  -e DJANGO_SETTINGS_MODULE=lawfirm_cms.settings.production \
-  -v /srv/lawfirm_cms/static:/app/static \
-  -v /srv/lawfirm_cms/media:/app/media \
-  lawfirm-cms
+sudo ln -s /etc/nginx/sites-available/lawfirm /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
 ```
-仍需在容器中或通过挂载方式提供 `settings/local.py` 以设置 `SECRET_KEY` 和 `ALLOWED_HOSTS`。
 
-## 目录提示
-- 业务与页面代码：`lawfirm_cms/`（Django/Wagtail 项目）
-- 静态文件输出：`lawfirm_cms/static/`
-- 上传媒体：`lawfirm_cms/media/`
-- 初始内容脚本：`create_initial_content.py`、`import_content.py` 等，可在迁移后按需运行
-
-完成上述步骤后，即可通过 Nginx 访问上线的 Wagtail 后台与前台站点。***
+部署完成！访问你的域名即可看到网站。
