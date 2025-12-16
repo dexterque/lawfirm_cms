@@ -28,10 +28,9 @@ class TeamIndexPage(Page):
                 pass
         context['members'] = members
         context['members_with_photo'] = members.exclude(photo__isnull=True)
-        # 分类：尝试将成员按职位分入三类，职位文本匹配优先顺序自定义
+        # 分类：只保留 主办律师 和 律师业务助理
         categories = {
             '主办律师': [],
-            '律师主任助理': [],
             '律师业务助理': [],
         }
         others = []
@@ -40,9 +39,6 @@ class TeamIndexPage(Page):
             if getattr(m, 'role', None):
                 if m.role == 'host':
                     categories['主办律师'].append(m)
-                    continue
-                if m.role == 'chief_assistant':
-                    categories['律师主任助理'].append(m)
                     continue
                 if m.role == 'business_assistant':
                     categories['律师业务助理'].append(m)
@@ -56,8 +52,6 @@ class TeamIndexPage(Page):
             lowered = pos.lower()
             if '主办' in lowered or '主办律师' in lowered:
                 categories['主办律师'].append(m)
-            elif '主任助理' in lowered or '主任' in lowered:
-                categories['律师主任助理'].append(m)
             elif '业务助理' in lowered or '助理' in lowered:
                 categories['律师业务助理'].append(m)
             else:
@@ -65,10 +59,8 @@ class TeamIndexPage(Page):
 
         context['team_categories'] = categories
         context['team_others'] = others
-        # expose specific role lists as separate context variables to avoid
-        # template lookup issues with non-ASCII dictionary keys
+        # expose specific role lists as separate context variables
         context['team_host'] = categories.get('主办律师', [])
-        context['team_chief_assistant'] = categories.get('律师主任助理', [])
         context['team_business_assistant'] = categories.get('律师业务助理', [])
         return context
 
@@ -76,7 +68,6 @@ class TeamMemberPage(Page):
     position = models.CharField(max_length=100)
     ROLE_CHOICES = [
         ('host', '主办律师'),
-        ('chief_assistant', '律师主任助理'),
         ('business_assistant', '律师业务助理'),
     ]
     # 标准化职位枚举，优先使用此字段进行分类；保留 free-text `position` 以兼容历史数据
