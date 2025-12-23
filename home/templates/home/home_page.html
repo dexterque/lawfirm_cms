@@ -310,7 +310,10 @@
                             </div>
                             <div class="t_right">
                                 <div class="lvshi">
-                                    <img src="/uploads/allimg/20240509/01.png" style="height: 740px;width: 400px;">
+                                    {% if page.main_lawyer_photo %}
+                                    {% image page.main_lawyer_photo original as lawyer_full %}
+                                    <img src="{{ lawyer_full.url }}" style="height: 740px;width: 400px;">
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
