@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    server_name chengbianlaw.com www.chengbianlaw.com 59.110.54.132;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /var/www/lawfirm_cms;
+    }
+    location /media/ {
+        root /var/www/lawfirm_cms;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/var/www/lawfirm_cms/lawfirm_cms.sock;
+    }
+}
