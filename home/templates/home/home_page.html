@@ -51,10 +51,9 @@
         <div class="top_two" id="dao">
             <div class="w1400">
                 <h1 class="logo">
-                    <a href="/" title="北京翰汇律师事务所">
-                        <img id="img_white" src="/media/images/logo_2955x801_transparent.original.png"
-                            alt="北京翰汇律师事务所" />
-                        <img id="img_black" src=" " alt="北京翰汇律师事务所">
+                    <a href="/" title="北京诚辩律师事务所">
+                        <img id="img_white" src="/uploads/allimg/20240516/1-240516163232X5.png" alt="北京诚辩律师事务所" />
+                        <img id="img_black" src=" " alt="北京诚辩律师事务所">
                     </a>
                 </h1>
                 <nav>
@@ -95,11 +94,11 @@
                             var h = document.documentElement.scrollTop || document.body.scrollTop;
                             var headerTop = document.getElementById('dao');
                             if (h > 100) {
-                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/logo-black.png " alt="_翰汇所" />');
+                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/logo-black.png " alt="_诚辩所" />');
                                 headerTop.style.background = '#fff';
                                 $('#text li a').css('color', '#000');
                             } else if (h <= 100) {
-                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/1-240516163232X5.png" alt="_翰汇所" />');
+                                $('.logo a').html('<img id="img_white" src="/uploads/allimg/20240516/1-240516163232X5.png" alt="_诚辩所" />');
                                 headerTop.style.background = 'transparent';
                                 $('#text li a').css('color', '#fff');
                             }
@@ -283,8 +282,8 @@
                                                 {% endif %}
                                             </div>
                                             <h3 style="position:absolute;bottom: 10px; color: #fff;">
-                                                {{ page.main_lawyer_name|default:"吴少博" }}
-                                                <span>{{ page.main_lawyer_position|default:"北京吴少博律师事务所创始人、主任" }}</span>
+                                                {{ page.main_lawyer_name|default:"陈律师" }}
+                                                <span>{{ page.main_lawyer_position|default:"北京诚辩律师事务所创始人、主任" }}</span>
                                             </h3>
                                         </div>
                                         <div class="tlmore"><a href="/zhuanyetuandui/lawyer-wushaobo/">查看详情</a></div>
@@ -313,7 +312,7 @@
                                 <div class="lvshi">
                                     {% if page.main_lawyer_photo %}
                                     {% image page.main_lawyer_photo original as lawyer_full %}
-                                    <img src="/media/images/portrait_fit_transparent_526x920.original.png" style="height: 740px;width: 400px;">
+                                    <img src="{{ lawyer_full.url }}" style="height: 740px;width: 400px;">
                                     {% endif %}
                                 </div>
                             </div>
@@ -448,10 +447,10 @@
                     <div class="line"></div>
                     <div class="left">
                         <div class="l_top">
-                            <img src="/media/images/1.max-165x165.png" alt="关于我们">
+                            <img src="/uploads/allimg/20240513/us_01.png" alt="关于我们">
                             <a href="/guanyuwomen/" style="display: block;">
                                 <div class="service">
-                                    <img src="/media/images/2.max-165x165.png" alt="服务理念">
+                                    <img src="/uploads/allimg/20240513/service.svg" alt="服务理念">
                                     <p>服务理念</p>
                                 </div>
                             </a>
@@ -459,7 +458,7 @@
                         <div class="l_bottom">
                             <a href="/guanyuwomen/" style="display: block;">
                                 <div class="situation">
-                                    <img src="/media/images/lawfirm_sign_fit_500x230.max-165x165.jpg" alt="律所概况">
+                                    <img src="/uploads/allimg/20240513/situation.svg" alt="律所概况">
                                     <p>律所概况</p>
                                 </div>
                             </a>
