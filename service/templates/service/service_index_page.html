@@ -9,100 +9,120 @@
     </div>
     {% endif %}
 
-    <div class="service-grid" style="display:flex;flex-wrap:wrap;gap:20px;">
-        {% for service in services %}
-        <div class="service-item"
-            style="width:calc(25% - 15px);min-width:200px;border:1px solid #eee;border-radius:8px;padding:20px;text-align:center;transition:all 0.3s;">
-            <a href="{% pageurl service %}" style="text-decoration:none;color:#333;">
-                {% if service.icon %}
-                {% image service.icon width-60 as icon %}
-                <img src="{{ icon.url }}" alt="{{ service.title }}" style="width:60px;height:60px;margin-bottom:15px;">
-                {% endif %}
-                <h3 style="margin:0 0 10px 0;font-size:16px;color:#333;">{{ service.title }}</h3>
-                {% if service.short_description %}
-                <p style="margin:0;font-size:14px;color:#666;line-height:1.6;">{{
-                    service.short_description|truncatechars:100 }}</p>
-                {% endif %}
-            </a>
-        </div>
-        {% empty %}
-        <!-- 默认显示业务领域内容 -->
-        <div class="mission-tab" style="width:100%;">
-            <ul class="first-u" style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:20px;">
-                <li class="tab active" style="flex:1;min-width:200px;">
-                    <div class="tab-button"
-                        style="background:#C20A14;padding:15px;border-radius:8px;text-align:center;">
-                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-02.svg" alt=""
-                            style="width:40px;height:40px;margin-bottom:10px;">
-                        <span style="display:block;color:#fff;">拆迁维权</span>
-                    </div>
-                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
-                        <ul style="list-style:none;padding:0;margin:0;">
-                            <li style="padding:5px 0;"><span>群体违法建筑拆除</span></li>
-                            <li style="padding:5px 0;"><span>城中村搬迁安置</span></li>
-                            <li style="padding:5px 0;"><span>非住宅企业厂房腾退</span></li>
-                            <li style="padding:5px 0;"><span>棚户区及危房改造搬迁安置</span></li>
-                            <li style="padding:5px 0;"><span>村委会自治腾退</span></li>
-                            <li style="padding:5px 0;"><span>环境整治</span></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="tab" style="flex:1;min-width:200px;">
-                    <div class="tab-button" style="background:#333;padding:15px;border-radius:8px;text-align:center;">
-                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-01.svg" alt=""
-                            style="width:40px;height:40px;margin-bottom:10px;">
-                        <span style="display:block;color:#fff;">征收维权</span>
-                    </div>
-                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
-                        <ul style="list-style:none;padding:0;margin:0;">
-                            <li style="padding:5px 0;"><span>国有土地征收</span></li>
-                            <li style="padding:5px 0;"><span>集体土地征收</span></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="tab" style="flex:1;min-width:200px;">
-                    <div class="tab-button" style="background:#333;padding:15px;border-radius:8px;text-align:center;">
-                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-03.svg" alt=""
-                            style="width:40px;height:40px;margin-bottom:10px;">
-                        <span style="display:block;color:#fff;">关停维权</span>
-                    </div>
-                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
-                        <ul style="list-style:none;padding:0;margin:0;">
-                            <li style="padding:5px 0;"><span>环保安全关停</span></li>
-                            <li style="padding:5px 0;"><span>产能淘汰整合</span></li>
-                            <li style="padding:5px 0;"><span>举报处罚关停</span></li>
-                            <li style="padding:5px 0;"><span>资源合并关停</span></li>
-                            <li style="padding:5px 0;"><span>公共利益原因关停</span></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="tab" style="flex:1;min-width:200px;">
-                    <div class="tab-button" style="background:#333;padding:15px;border-radius:8px;text-align:center;">
-                        <img src="/uploads/allimg/20240508/%e4%b8%9a%e5%8a%a1%e9%a1%b5-06.svg" alt=""
-                            style="width:40px;height:40px;margin-bottom:10px;">
-                        <span style="display:block;color:#fff;">商品房集体维权</span>
-                    </div>
-                    <div class="content_box" style="margin-top:10px;padding:15px;background:#f9f9f9;border-radius:8px;">
-                        <ul style="list-style:none;padding:0;margin:0;">
-                            <li style="padding:5px 0;"><span>房屋质量问题</span></li>
-                            <li style="padding:5px 0;"><span>虚假宣传销售</span></li>
-                            <li style="padding:5px 0;"><span>小区规划变更</span></li>
-                            <li style="padding:5px 0;"><span>产证手续无法办理</span></li>
-                            <li style="padding:5px 0;"><span>无法交付烂尾</span></li>
-                            <li style="padding:5px 0;"><span>分割拆零售后包租</span></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        {% endfor %}
+    <div class="swiper-container2">
+        <ul class="yewulingyu service-detail-list">
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-01.original.svg" alt="刑事法律事务" class="svg1">
+                        <img src="/media/images/white-01.original.svg" alt="刑事法律事务" class="svg2">
+                        <p>刑事法律事务</p>
+                        <hr>
+                        <div class="detail">重大刑事案件辩护、取保候审、侦查/起诉/审判阶段会见与证据梳理，企业刑事合规及风险防控专项顾问。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-02.original.svg" alt="行政法律事务" class="svg1">
+                        <img src="/media/images/white-02.original.svg" alt="行政法律事务" class="svg2">
+                        <p>行政法律事务</p>
+                        <hr>
+                        <div class="detail">行政处罚/吊销听证、行政复议与诉讼、征收征用补偿争议、行政监管合规咨询，协助政府与企业依法决策。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-03.original.svg" alt="商品房集团维权" class="svg1">
+                        <img src="/media/images/white-03.original.svg" alt="商品房集团维权" class="svg2">
+                        <p>商品房集团维权</p>
+                        <hr>
+                        <div class="detail">烂尾与延期交付、面积误差、虚假宣传、质量瑕疵、规划变更、车位与配套纠纷的集体谈判与诉讼代理。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-04.original.svg" alt="房地产与建设工程" class="svg1">
+                        <img src="/media/images/white-04.original.svg" alt="房地产与建设工程" class="svg2">
+                        <p>房地产与建设工程</p>
+                        <hr>
+                        <div class="detail">土地并购与项目开发、设计施工总承包、工程结算与索赔、招投标合规、物业与业主纠纷全链条法律服务。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-05.original.svg" alt="资本市场" class="svg1">
+                        <img src="/media/images/white-05.original.svg" alt="资本市场" class="svg2">
+                        <p>资本市场</p>
+                        <hr>
+                        <div class="detail">股权架构与控制权设计、股权融资与并购重组、私募/债券合规发行、重大事项信息披露与上市公司持续合规辅导。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-06.original.svg" alt="公司法律事务" class="svg1">
+                        <img src="/media/images/white-06.original.svg" alt="公司法律事务" class="svg2">
+                        <p>公司法律事务</p>
+                        <hr>
+                        <div class="detail">公司设立与治理结构设计、股权激励与期权计划、合同审查与内控合规、劳动用工管理与争议解决常年顾问。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-07.original.svg" alt="民商法律事务" class="svg1">
+                        <img src="/media/images/white-07.original.svg" alt="民商法律事务" class="svg2">
+                        <p>民商法律事务</p>
+                        <hr>
+                        <div class="detail">合同履约与违约纠纷、债权债务追偿、侵权损害赔偿、婚姻家事与继承、仲裁与诉讼全流程代理。</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="libox">
+                    <a href="javascript:void(0)" style="display:block">
+                        <img src="/media/images/red_2-08.original.svg" alt="金融业务" class="svg1">
+                        <img src="/media/images/white-08.original.svg" alt="金融业务" class="svg2">
+                        <p>金融业务</p>
+                        <hr>
+                        <div class="detail">银行/信托/资管合规、融资租赁与保理、担保安排与风险隔离设计、不良资产收购处置、金融纠纷诉讼与仲裁。</div>
+                    </a>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
 
 <style>
-    .service-item:hover {
-        border-color: #C20A14;
-        box-shadow: 0 4px 12px rgba(194, 10, 20, 0.1);
+    .service-detail-list .libox {
+        position: relative;
+        overflow: hidden;
+        height: 260px;
+    }
+
+    .service-detail-list .detail {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+        opacity: 0;
+        transition: opacity .3s ease, color .3s ease;
+        min-height: 72px;
+    }
+
+    .service-detail-list li:hover .detail {
+        opacity: 1;
+        color: #fff;
     }
 </style>
 {% endblock %}
