@@ -13,7 +13,7 @@
     {% else %}
     <title>{{ page.title }}</title>
     {% endif %}
-    <meta name="keywords" content="{{ page.seo_keywords|default:'' }}" />
+    <meta name="keywords" content="{{ page.title|default:'北京诚辩律师事务所,诚辩律师事务所'}}" />
     <meta name="description" content="{{ page.search_description|default:'' }}" />
     <link href="/uploads/allimg/20240516/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="{% static 'template/pc/skin/css/style.css' %}" rel="stylesheet" media="screen" type="text/css" />

@@ -9,7 +9,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>{{ page.title }}_诚辩所</title>
-    <meta name="keywords" content="北京诚辩律师事务所,翰汇律师事务所" />
+    <meta name="keywords" content="{{ page.title|default:'北京诚辩律师事务所,诚辩律师事务所'}}" />
     <meta name="description" content="{{ page.intro|default:page.title }}" />
     <link href="/uploads/allimg/20240516/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="{% static 'template/pc/skin/css/style.css' %}" rel="stylesheet" media="screen" type="text/css" />
