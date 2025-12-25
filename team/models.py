@@ -16,14 +16,15 @@ class TeamIndexPage(Page):
     def get_context(self, request):
         context = super().get_context(request)
         # 获取具体的 TeamMemberPage 实例
-        members = TeamMemberPage.objects.child_of(self).live().order_by('first_published_at')
+        # Respect backend ordering (as arranged in Wagtail), do not override with publish date
+        members = TeamMemberPage.objects.child_of(self).live()
         # 如果当前索引页没有子成员（例如这是按角色创建的空索引页），
         # 回退到主团队索引 `zhuanyetuandui` 的子成员以便复用同一成员集合。
         if not members.exists():
             try:
                 fallback = TeamIndexPage.objects.get(slug='zhuanyetuandui')
                 if fallback and fallback.id != self.id:
-                    members = TeamMemberPage.objects.child_of(fallback).live().order_by('first_published_at')
+                    members = TeamMemberPage.objects.child_of(fallback).live()
             except TeamIndexPage.DoesNotExist:
                 pass
         context['members'] = members
