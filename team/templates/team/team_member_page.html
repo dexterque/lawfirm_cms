@@ -7,8 +7,14 @@
         <div class="member-photo" style="flex-shrink:0;">
             {% if page.photo %}
             {% image page.photo fill-300x400 as photo %}
-            <img src="{{ photo.url }}" alt="{{ page.title }}"
-                style="width:300px;height:400px;object-fit:cover;border-radius:8px;">
+            {% if "not-found" in photo.url %}
+                {% image page.photo fill-200x200 as photo_small %}
+                <img src="{{ photo_small.url }}" alt="{{ page.title }}"
+                    style="width:300px;height:400px;object-fit:cover;border-radius:8px;">
+            {% else %}
+                <img src="{{ photo.url }}" alt="{{ page.title }}"
+                    style="width:300px;height:400px;object-fit:cover;border-radius:8px;">
+            {% endif %}
             {% else %}
             <div
                 style="width:300px;height:400px;background:#f5f5f5;border-radius:8px;display:flex;align-items:center;justify-content:center;">

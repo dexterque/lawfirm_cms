@@ -292,15 +292,15 @@
                                 <div class="timgbox pcclickBox">
                                     <ul>
                                         {% for member in team_list %}
-                                        <li style="position: relative;">
-                                            <a href="{% pageurl member %}">
-                                                {% if member.photo %}
-                                                {% image member.photo fill-150x180 as member_img %}
-                                                <img src="{{ member_img.url }}" alt='{{ member.title }}'
-                                                    title="{{ member.title }}">
-                                                {% endif %}
-                                            </a>
-                                        </li>
+                                         <li style="position: relative;">
+                                             <a href="{% pageurl member %}">
+                                                 {% if member.photo %}
+                                                 {% image member.photo fill-200x200 as member_img %}
+                                                 <img src="{{ member_img.url }}" alt='{{ member.title }}'
+                                                     title="{{ member.title }}">
+                                                 {% endif %}
+                                             </a>
+                                         </li>
                                         {% empty %}
                                         <!-- 默认团队成员（后台未配置时显示） -->
                                         {% endfor %}

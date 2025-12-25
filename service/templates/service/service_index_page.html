@@ -124,5 +124,20 @@
         opacity: 1;
         color: #fff;
     }
+
+    /* 缩小图标尺寸并居中 */
+    .service-detail-list .libox .svg1,
+    .service-detail-list .libox .svg2 {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 12px auto;
+        display: block;
+    }
+
+    /* 覆盖原有 hover 背景图，统一改为纯红色背景 */
+    .service-detail-list li:hover .libox {
+        background-image: none !important;
+        background-color: #C20A14 !important;
+    }
 </style>
 {% endblock %}
